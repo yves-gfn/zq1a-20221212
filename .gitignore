@@ -1,0 +1,22 @@
+#If you want to ignore .gitignore remove comment
+#.gitignore
+
+#java related
+*.class
+
+#eclipse related
+.project
+.metadata
+bin/**
+tmp/**
+*./tmp
+*./bak
+*./swp
+.settings/
+.classpath
+.loadpath
+
+
+
+#Need to learn more about .gitignore?
+#https://www.jamescoyle.net/how-to/1094-ignoring-files-in-git-with-gitignore
