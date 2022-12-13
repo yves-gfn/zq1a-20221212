@@ -19,7 +19,7 @@ public class StringConcatenationRedFlagWithPlus {
 		//Mit Klammern kann die Auswertunsgreihenfolge wie in der Mathematik beeinflusst werden
 		System.out.println(str1 + str2 + (5 + 10) + 5 + 10);
 		
-		System.out.println(5 + 10 + (str1 + str2) + 5 + 10); //weiteres Beispiel... 
+		System.out.println(5 + 10 + (str1 + str2) + 5 + 10); //weiteres Beispiel... ähnliches Verhalten!
 	}
 
 }
