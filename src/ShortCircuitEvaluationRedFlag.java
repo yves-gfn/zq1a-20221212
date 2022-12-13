@@ -12,5 +12,4 @@ public class ShortCircuitEvaluationRedFlag {
 			System.out.println("j = " + j);
 		}
 	}
-
 }
