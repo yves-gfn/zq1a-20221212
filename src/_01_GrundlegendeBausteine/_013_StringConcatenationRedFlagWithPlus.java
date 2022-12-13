@@ -1,5 +1,6 @@
+package _01_GrundlegendeBausteine;
 
-public class StringConcatenationRedFlagWithPlus {
+public class _013_StringConcatenationRedFlagWithPlus {
 
 	public static void main(String[] args) {
 		String str1 = "Hallo";
