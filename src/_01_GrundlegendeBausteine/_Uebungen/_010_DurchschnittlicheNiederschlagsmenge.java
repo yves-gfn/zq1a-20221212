@@ -6,6 +6,7 @@ public class _010_DurchschnittlicheNiederschlagsmenge {
 
 	public static void main(String[] args) {
 		
+		
 		final int ANZAHL_MONATE = 3;
 		
 //		Friendly Reminder
@@ -21,9 +22,9 @@ public class _010_DurchschnittlicheNiederschlagsmenge {
 		
 		double result = (april + mai + juni) / ANZAHL_MONATE;
 		
-		JOptionPane.showMessageDialog(null, "Die Niederschlagsmenge fuer April is: " + String.format("%.0f l/qm", april) + "\n"
-									+ "Die Niederschlagsmenge fuer Mai ist: " + String.format("%.0f l/qm", mai) + "\n"
-									+ "Die Niederschlagsmenge fuer Juni ist: " + String.format("%.0fl/qm", juni) + "\n\n"
-									+ "Die durchschnittliche Niederschlagsmenge betraegt: " + String.format("%.2f l/qm", result));
+		JOptionPane.showMessageDialog(null, "Die Niederschlagsmenge fuer April is: " + String.format("%.2f l/m\u00B2", april) + "\n"
+									+ "Die Niederschlagsmenge fuer Mai ist: " + String.format("%.2f l/m\u00B2", mai) + "\n"
+									+ "Die Niederschlagsmenge fuer Juni ist: " + String.format("%.2f l/m\u00B2", juni) + "\n\n"
+									+ "Die durchschnittliche Niederschlagsmenge betraegt: " + String.format("%.2f l/m\u00B2", result));
 	}
 }
