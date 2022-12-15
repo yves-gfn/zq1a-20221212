@@ -26,5 +26,6 @@ public class _022_Fakultaet {
 		} else {
 			JOptionPane.showMessageDialog(null, "Bitte beim naechsten mal eine Zahl zwischen 0 und 10 eingeben.");
 		}
+		
 	}
 }
