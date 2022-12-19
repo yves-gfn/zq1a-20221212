@@ -21,7 +21,7 @@ public class _030_1_ArrayRechnen {
 		//3
 		arrayEins[0] /= arrayEins[3];	//Schnellschreibweise mit kombiniertem Zuweisungsoperator /=
 		
-		System.out.println();
+		System.out.println();			//Absatz!
 		//4) Falls das fünfte Element ein Teiler des dritten Elementes ist,
 		//dann soll die Konsolenausgabe „5. Element ist Teiler vom 3. Element“ erscheinen.
 		if(arrayEins[2] % arrayEins[4] == 0) {
@@ -32,8 +32,5 @@ public class _030_1_ArrayRechnen {
 		for(int i : arrayEins) {
 			System.out.print(i + " ");
 		}
-		
-		
 	}
-
 }
