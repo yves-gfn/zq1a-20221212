@@ -1,4 +1,4 @@
-package _04_OOP_Einfuehrung._02;
+package _04_OOP_Einfuehrung._03;
 
 public class Rechteck {
 	double laenge;
@@ -62,5 +62,10 @@ public class Rechteck {
     //Virtuelles Attribut "Umfang"
     double getUmfang() {
     		return 2 * this.laenge + 2 * this.breite;
+    }
+    
+    void laengeAusgeben() {
+	    	double laenge = 5.4;
+	    	System.out.println("Laenge: " + laenge);
     }
 }

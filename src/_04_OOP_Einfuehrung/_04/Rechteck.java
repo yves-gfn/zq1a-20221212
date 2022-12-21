@@ -1,4 +1,4 @@
-package _04_OOP_Einfuehrung._02;
+package _04_OOP_Einfuehrung._04;
 
 public class Rechteck {
 	double laenge;
@@ -63,4 +63,26 @@ public class Rechteck {
     double getUmfang() {
     		return 2 * this.laenge + 2 * this.breite;
     }
+    
+    void laengeAusgeben() {
+	    	double laenge = 5.4;
+	    	System.out.println("Laenge: " + laenge);
+    }
+    
+    void laengeVergroessern(double laenge) {
+		this.laenge += laenge;
+	}
+	
+	
+	void breiteVergroessern(double breite) {
+			this.breite += breite;
+	}
+	
+	void laengeVerkleinern(double laenge) {
+			this.laenge -= laenge;
+	}
+	
+	void breiteVerkleinern(double breite) {
+			this.breite -= breite;
+	}
 }
