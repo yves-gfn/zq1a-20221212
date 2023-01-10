@@ -14,7 +14,13 @@ public class Vogel extends Tier {
 	}
 	
 	Vogel(double gewicht, String federFarbBezeichnung) {
-		this.gewicht = gewicht;
+		super(gewicht);
 		this.federFarbBezeichnung = federFarbBezeichnung;
+	}
+	
+	@Override
+	public String toString() {
+		return "Ein Vogel, Gewicht: " + this.gewicht 
+				+"\n Federfarbe: " + this.federFarbBezeichnung;
 	}
 }

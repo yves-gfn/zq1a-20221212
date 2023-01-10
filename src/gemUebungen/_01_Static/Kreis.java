@@ -46,5 +46,15 @@ public class Kreis {
 		return anzahlKreis;
 	}
 	
+	//Methoden überschreiben
+	//Die toString() Methode von Object geerbt wird überschrieben
+	
+	@Override
+	public String toString() {
+		return "Kreisradius: " + this.getRadius() 
+		+"\nKreisflaeche: " + String.format("%.2f", this.getFlaeche())
+		+"\nKreisumfang: " + String.format("%.2f", this.getUmfang());
+	}
+	
 	
 }
