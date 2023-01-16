@@ -97,7 +97,7 @@ public class UmrechnungFahrenheitCelsius extends JFrame {
 		btnEnde = new JButton("Ende");
 		btnEnde.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				System.exit(ABORT);
 			}
 		});
 		btnEnde.setBounds(134, 87, 106, 20);

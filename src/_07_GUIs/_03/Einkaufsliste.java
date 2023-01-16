@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Einkaufsliste extends JFrame {
 
@@ -60,6 +62,16 @@ public class Einkaufsliste extends JFrame {
 		contentPane.add(lblStueckzahl);
 		
 		tfStueckzahl = new JTextField();
+		tfStueckzahl.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					tfStueckpreis.requestFocus();
+					tfStueckpreis.selectAll();
+				}
+				
+			}
+		});
 		tfStueckzahl.setBounds(10, 32, 90, 20);
 		contentPane.add(tfStueckzahl);
 		tfStueckzahl.setColumns(10);
@@ -70,6 +82,15 @@ public class Einkaufsliste extends JFrame {
 		contentPane.add(lblStueckpreis);
 		
 		tfStueckpreis = new JTextField();
+		tfStueckpreis.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					tfRabatt.requestFocus();
+					tfRabatt.selectAll();
+				}
+			}
+		});
 		tfStueckpreis.setColumns(10);
 		tfStueckpreis.setBounds(138, 32, 90, 20);
 		contentPane.add(tfStueckpreis);
@@ -80,6 +101,14 @@ public class Einkaufsliste extends JFrame {
 		contentPane.add(lblRabatt);
 		
 		tfRabatt = new JTextField();
+		tfRabatt.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					btnBerechnen.doClick();
+				}
+			}
+		});
 		tfRabatt.setBounds(267, 32, 90, 20);
 		contentPane.add(tfRabatt);
 		tfRabatt.setColumns(10);
@@ -99,6 +128,10 @@ public class Einkaufsliste extends JFrame {
 					
 					//Ausgabe
 					lblResult.setText("Ergebnis: " + String.format("%.2f", ergebnis));
+					
+					//Usability: Focus zurueck auf das Textfeld Stueckzahl um direkt weiter zu arbeiten
+					tfStueckzahl.requestFocus();
+					tfStueckzahl.selectAll();
 					
 				} else {
 					lblResult.setText("Die Eingaben muessen vollstaendig ausgefuellt sein!");
