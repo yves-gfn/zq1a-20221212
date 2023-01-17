@@ -12,7 +12,11 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
+import javax.swing.JComponent;
+
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.awt.event.ActionEvent;
@@ -241,5 +245,14 @@ public class Notenbilanz extends JFrame {
 		});
 		btnEnd.setBounds(395, 227, 89, 23);
 		contentPane.add(btnEnd);
+		
+		getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), "EXIT");
+		getRootPane().getActionMap().put("EXIT", new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				System.out.println("ESC pressed");
+			}	
+		});
 	}
 }
