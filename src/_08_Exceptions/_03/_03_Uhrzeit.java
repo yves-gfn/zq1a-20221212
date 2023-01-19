@@ -78,6 +78,22 @@ public class _03_Uhrzeit extends JFrame {
 		contentPane.add(lblResultTime);
 		
 		btnApply = new JButton("\u00DCbernehmen");
+		btnApply.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					int hrs = Integer.parseInt(tfHours.getText());
+					int min = Integer.parseInt(tfMinutes.getText());
+					
+					if(hrs < 0 || hrs > 23) throw new NumberFormatException();
+					if(min < 0 || min > 59) throw new NumberFormatException();
+					
+					lblResultTime.setText("Ihre Uhrzeit ist: " + String.format("%02d:%02d", hrs, min) + " Uhr"); 
+				} catch (NumberFormatException nfe) {
+					lblResultTime.setText("Ungueltige Uhrzeit!");
+					nfe.printStackTrace();
+				}
+			}
+		});
 		btnApply.setBounds(233, 35, 179, 23);
 		contentPane.add(btnApply);
 		

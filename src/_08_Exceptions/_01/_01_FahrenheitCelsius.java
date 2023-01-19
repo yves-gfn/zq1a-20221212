@@ -1,5 +1,6 @@
 package _08_Exceptions._01;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 
@@ -83,22 +84,23 @@ public class _01_FahrenheitCelsius extends JFrame {
 		btnUmrechnen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DecimalFormat f = new DecimalFormat("#0.00");
-				
+				tfCelsius.setForeground(Color.BLACK);
 				try {
-					
+					double fahrenheit = Double.parseDouble(tfFahrenheit.getText());
+					double celsius = (fahrenheit - 32) * 5 / 9;
+					tfCelsius.setText(f.format(celsius));
+					tfFahrenheit.requestFocus();
+					tfFahrenheit.selectAll();
 				} catch (Exception e1) {
-					
-				} 
-					finally {
-					
-				} 
+					tfCelsius.setForeground(Color.RED);
+					tfCelsius.setText("Keine korrekte Fahrenheit Temperatur");
+					e1.printStackTrace();
+				}
 				
 				
-				double fahrenheit = Double.parseDouble(tfFahrenheit.getText());
-				double celsius = (fahrenheit - 32) * 5 / 9;
-				tfCelsius.setText(f.format(celsius));
-				tfFahrenheit.requestFocus();
-				tfFahrenheit.selectAll();
+				
+				
+				
 				
 			}
 		});

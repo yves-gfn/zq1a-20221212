@@ -81,22 +81,17 @@ public class _04_Uhrzeit extends JFrame {
 		btnApply.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					lblResultTime.setForeground(Color.BLACK);
-					
 					int hrs = Integer.parseInt(tfHours.getText());
-					int min = 0;
-					if (hrs < 0 || hrs > 23) throw new NumberFormatException();
-					else {
-                        min = Integer.parseInt(tfMinutes.getText());
-						if(min < 0 || min > 59) throw new NumberFormatException();
-					}
+					int min = Integer.parseInt(tfMinutes.getText());
 					
-					lblResultTime.setText("Ihre Uhrzeit ist " + String.format("%02d:%02d", hrs, min) + " Uhr.");				
+					if(hrs < 0 || hrs > 23) throw new _04_UhrzeitFormatException("Ungueltige Stundenangabe!");
+					if(min < 0 || min > 59) throw new _04_UhrzeitFormatException("Ungueltige Minutenangabe!");
 					
+					lblResultTime.setText("Ihre Uhrzeit ist: " + String.format("%02d:%02d", hrs, min) + " Uhr"); 
+				} catch (_04_UhrzeitFormatException ufe) {
+					lblResultTime.setText(ufe.getMessage());
 				} catch (NumberFormatException nfe) {
 					lblResultTime.setText("Ungueltige Uhrzeit!");
-					lblResultTime.setForeground(Color.RED);
-					System.out.println("User hat Text oder ungueltige Uhrzeit (zu gross, klein) eingegeben. \n");
 					nfe.printStackTrace();
 				}
 			}
